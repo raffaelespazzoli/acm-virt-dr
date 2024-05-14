@@ -9,7 +9,7 @@ projects:
     description: Project for overall cluster configuration
     namespace: openshift-gitops
     sourceRepos:
-    - https://github.com/raffaelespazzoli/gitops-std-repo
+    - ${INFRA_GITOPS_REPO}
     destinations: |
       - namespace: '*'
         server: https://kubernetes.default.svc

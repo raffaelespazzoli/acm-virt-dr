@@ -1,7 +1,7 @@
 run
 
 ```sh
-export gitops_repo=https://github.com/raffaelespazzoli/openshift-waf.git #<your newly created repo>
+export gitops_repo=https://github.com/raffaelespazzoli/acm-virt-dr.git #<your newly created repo>
 export cluster_name=hub #<your hub cluster name, typically "hub">
 export cluster_base_domain=$(oc get ingress.config.openshift.io cluster --template={{.spec.domain}} | sed -e "s/^apps.//")
 export platform_base_domain=${cluster_base_domain#*.}
