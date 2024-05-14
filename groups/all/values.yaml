@@ -62,11 +62,4 @@ applications:
             - /spec/acme/solvers
           kind: ClusterIssuer      
 
-  openshift-config:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '7'
-    destination:
-      namespace: openshift-config
-    source:
-      path: components/openshift-config              
+              

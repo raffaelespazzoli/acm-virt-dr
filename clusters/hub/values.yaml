@@ -7,7 +7,16 @@ applications:
     destination:
       namespace: open-cluster-management
     source:
-      path: components/acm-operator       
+      path: components/acm-operator
+
+  openshift-config:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '7'
+    destination:
+      namespace: openshift-config
+    source:
+      path: clusters/hub/overlays/openshift-config             
 
 
 # clusters
