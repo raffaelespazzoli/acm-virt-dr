@@ -1,0 +1,8 @@
+clusterSet: default
+clusterName: ciao
+platformDomain: ciao.com
+hubDomain: pippo
+repoURL: https://github.com/something/something
+labels:
+  cloud: BareMetal
+  vendor: OpenShift

@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cert-manager
-
+  name: openshift-storage
   labels:
     openshift.io/cluster-monitoring: "true"
-    argocd.argoproj.io/managed-by: openshift-gitops 
+    argocd.argoproj.io/managed-by: openshift-gitops

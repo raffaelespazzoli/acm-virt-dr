@@ -1,26 +1,4 @@
-default:
-  app:
-    enabled: true
-    enableAutoSync: true
-    autoSyncPrune: false
-    project: cluster-config
-    labels:
-      app-source: group-all
-      repo: cluster-config
-    destination:
-      namespace: openshift-gitops
-      server: https://kubernetes.default.svc
-    source:
-      repoURL: https://github.com/raffaelespazzoli/gitops-std-repo.git
-      targetRevision: HEAD
-    syncOptions:
-    - ApplyOutOfSyncOnly=true
-    - PrunePropagationPolicy=foreground
-    - PruneLast=true
-    - ServerSideApply=true  
-    - FailOnSharedResource=true
-    - RespectIgnoreDifferences=true
-    - CreateNamespace=false      
+default: {}     
 
 projects:
 
@@ -40,7 +18,25 @@ projects:
       - group: '*'
         kind: '*'
 
-applications:
+applications: 
+
+  kube-ops-view:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: kube-ops-view
+    source:
+      path: components/kube-ops-view
+
+  patch-operator:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: patch-operator
+    source:
+      path: components/patch-operator
 
   cert-manager-operator:
     annotations:
@@ -49,4 +45,28 @@ applications:
     destination:
       namespace: cert-manager
     source:
-      path: components/cert-manager-operator
+      path: components/cert-manager-operator    
+
+  cert-manager-configuration:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '6'
+    destination:
+      namespace: cert-manager
+    source:
+      path: components/cert-manager-configuration
+    extraFields: |
+      ignoreDifferences:
+        - group: 'cert-manager.io'
+          jsonPointers:
+            - /spec/acme/solvers
+          kind: ClusterIssuer      
+
+  openshift-config:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '7'
+    destination:
+      namespace: openshift-config
+    source:
+      path: components/openshift-config              

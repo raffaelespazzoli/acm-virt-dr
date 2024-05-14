@@ -1,0 +1,37 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: prod-p
+
+resources:
+  - ./namespace.yaml
+
+helmGlobals:
+  chartHome: ../../../../.helm/charts
+
+helmCharts:
+  - name: aws-cluster
+    releaseName: prod-p
+    namespace: prod-p
+    valuesInline:
+      region: us-east-2
+  - name: cluster-registration
+    releaseName: prod-p
+    namespace: prod-p
+    valuesInline: 
+      clusterName: prod-p
+      platformDomain: ${PLATFORM_BASE_DOMAIN}
+      hubDomain: ${CLUSTER_BASE_DOMAIN}    
+      clusterSet: default
+      repoURL: ${INFRA_GITOPS_REPO}
+      labels:
+        cloud: AWS
+        vendor: OpenShift
+        region: us-east-2
+
+  # - name: vault-cluster-registration
+  #   releaseName: prod-p
+  #   namespace: vault-admin
+  #   valuesInline:
+  #     cluster:
+  #       apiUrl: https://api.prod-p.${PLATFORM_BASE_DOMAIN}:6443    
+    
