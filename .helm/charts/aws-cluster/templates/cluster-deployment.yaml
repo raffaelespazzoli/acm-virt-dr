@@ -27,6 +27,6 @@ spec:
       name: {{ .Release.Name }}-ssh-private-key
     imageSetRef:
        #quay.io/openshift-release-dev/ocp-release:4.13.17-multi
-      name: img4.13.17-multi-appsub
+      name: img4.15.12-multi-appsub
   pullSecretRef:
     name: {{ .Release.Name }}-pull-secret
