@@ -29,6 +29,20 @@ helmCharts:
         vendor: OpenShift
         region: us-west-2
 
+  - name: machine-pool
+    releaseName: odf
+    namespace: prod-p
+    valuesInline: 
+      labels: 
+        cluster.ocs.openshift.io/openshift-storage: ""
+      taints: []
+      purpose: odf
+      clusterRef: prod-p
+      replicas: 3
+      aws:
+        machineType: m5.large
+      infrastructure: aws        
+
   # - name: vault-cluster-registration
   #   releaseName: prod-p
   #   namespace: vault-admin
