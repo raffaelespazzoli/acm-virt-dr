@@ -1,5 +1,0 @@
-$patch: delete
-apiVersion: operator.openshift.io/v1
-kind: IngressController
-metadata:
-  name: defaultter
