@@ -13,7 +13,7 @@ helmCharts:
     releaseName: prod-a
     namespace: prod-a
     valuesInline:
-      region: us-east-2
+      region: us-east-1
   - name: cluster-registration
     releaseName: prod-a
     namespace: prod-a
@@ -26,7 +26,7 @@ helmCharts:
       labels:
         cloud: AWS
         vendor: OpenShift
-        region: us-east-2
+        region: us-east-1
 
   # - name: vault-cluster-registration
   #   releaseName: prod-a
