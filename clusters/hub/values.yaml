@@ -7,7 +7,16 @@ applications:
     destination:
       namespace: open-cluster-management
     source:
-      path: components/acm-operator            
+      path: components/acm-operator 
+
+  acm-configuration:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: open-cluster-management
+    source:
+      path: components/acm-configuration                 
 
 
 # clusters
