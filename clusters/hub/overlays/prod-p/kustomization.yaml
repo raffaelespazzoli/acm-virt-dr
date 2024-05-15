@@ -25,9 +25,10 @@ helmCharts:
       repoURL: ${INFRA_GITOPS_REPO}
       region: us-east-1
       labels:
-        cloud: AWS
+        cloud: aws
         vendor: OpenShift
         region: us-west-2
+      provider: aws  
 
   - name: machine-pool
     releaseName: odf

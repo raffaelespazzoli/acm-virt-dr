@@ -6,3 +6,4 @@ repoURL: https://github.com/something/something
 labels:
   cloud: BareMetal
   vendor: OpenShift
+provider: aws  

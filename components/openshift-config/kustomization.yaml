@@ -16,8 +16,6 @@ resources:
   - ./admin-role-binding.yaml
   - ./olm-patch.yaml
   - ./admin-group.yaml
-  - ./api-cert-patch.yaml
-  - ./cluster-api-certificate.yaml
   - ./cluster-ingress-certificate.yaml
   - ./ingress-controller-patch.yaml
   - ./ingress-rbac.yaml

@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - ../../../../components/openshift-config
   - ./feature-set-patch.yaml
+  - ./cluster-api-certificate.yaml
+  - ./api-cert-patch.yaml

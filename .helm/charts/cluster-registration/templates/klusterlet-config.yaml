@@ -9,7 +9,7 @@ spec:
   clusterName: {{ .Release.Name }}
   clusterNamespace: {{ .Release.Name }}
   clusterLabels:
-    cloud: BareMetal
+    cloud: {{ .Values.provider }}
     vendor: OpenShift
   applicationManager:
     enabled: true
