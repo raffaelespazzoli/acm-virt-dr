@@ -5,7 +5,6 @@ export gitops_repo=https://github.com/raffaelespazzoli/acm-virt-dr.git #<your ne
 export cluster_name=hub #<your hub cluster name, typically "hub">
 export cluster_base_domain=$(oc get ingress.config.openshift.io cluster --template={{.spec.domain}} | sed -e "s/^apps.//")
 export platform_base_domain=${cluster_base_domain#*.}
-export infrastructure_id=$(oc get infrastructure cluster -o jsonpath='{.status.infrastructureName}')
 export region=$(oc get infrastructure cluster -o jsonpath='{.status.platformStatus.aws.region}')
 oc apply -f .bootstrap/subscription.yaml
 oc apply -f .bootstrap/cluster-rolebinding.yaml

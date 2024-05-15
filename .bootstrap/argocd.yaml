@@ -542,8 +542,6 @@ spec:
             value: '${cluster_base_domain}'
           - name: INFRA_GITOPS_REPO
             value: '${gitops_repo}'
-          - name: infrastructure_id
-            value: '${infrastructure_id}'
           - name: region
             value: '${region}'                                                            
         # image: quay.io/gnunn/tools:latest
