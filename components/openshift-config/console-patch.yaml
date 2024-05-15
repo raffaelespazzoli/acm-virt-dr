@@ -6,6 +6,8 @@ metadata:
   name: cluster
 spec:
   plugins:
-  - logging-view-plugin
   - monitoring-plugin
   - odf-console
+  - mce
+  - gitops-plugin
+  - acm
