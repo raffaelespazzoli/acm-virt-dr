@@ -18,4 +18,8 @@ patches:
       spec:
         plugins:
         - odf-multicluster-console
+        - acm
+        - mce
+        - gitops-plugin
+        - monitoring-plugin
       
