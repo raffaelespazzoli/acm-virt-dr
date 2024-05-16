@@ -6,4 +6,4 @@ metadata:
   name: cluster
 spec:
   plugins:
-  - odf-multicluster-console
+  - odf-console

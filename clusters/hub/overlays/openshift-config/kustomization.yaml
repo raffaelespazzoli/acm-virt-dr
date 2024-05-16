@@ -6,3 +6,16 @@ resources:
   - ./feature-set-patch.yaml
   - ./cluster-api-certificate.yaml
   - ./api-cert-patch.yaml
+
+patches:
+  - patch: |-
+      apiVersion: operator.openshift.io/v1
+      kind: Console
+      metadata:
+        annotations:
+          argocd.argoproj.io/sync-options: Delete=false,ServerSideApply=true
+        name: cluster
+      spec:
+        plugins:
+        - odf-multicluster-console
+      
