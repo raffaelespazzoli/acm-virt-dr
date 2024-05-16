@@ -41,7 +41,7 @@ helmCharts:
       clusterRef: prod-a
       replicas: 3
       aws:
-        machineType: m5.xlarge
+        machineType: m6i.2xlarge
       infrastructure: aws                    
 
   # - name: vault-cluster-registration
