@@ -6,4 +6,4 @@ spec:
   drClusters:
   - 'prod-a'
   - 'prod-b'
-  schedulingInterval: '10'
+  schedulingInterval: '5m'
