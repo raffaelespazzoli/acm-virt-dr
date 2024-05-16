@@ -4,3 +4,5 @@ kind: Kustomization
 resources:
   - ./mirror-peer.yaml
   - ./policy.yaml
+  - ./production-managed-cluster-set.yaml
+  - ./submariner.broker.yaml
