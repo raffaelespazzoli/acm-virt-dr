@@ -6,22 +6,11 @@ metadata:
     uninstall.ocs.openshift.io/cleanup-policy: delete
     uninstall.ocs.openshift.io/mode: graceful
 spec:
-  arbiter: {}
-  encryption:
-    kms: {}
-  externalStorage: {}
-  managedResources:
-    cephBlockPools: {}
-    cephConfig: {}
-    cephDashboard: {}
-    cephFilesystems: {}
-    cephObjectStoreUsers: {}
-    cephObjectStores: {}
-  mirroring: {}
-  nodeTopologies: {}
   storageDeviceSets:
     - config: {}
-      count: 1
+      resources: {}
+      placement: {}
+      name: ocs-deviceset-gp3-csi
       dataPVCTemplate:
         metadata: {}
         spec:
@@ -33,9 +22,34 @@ spec:
           storageClassName: gp3-csi
           volumeMode: Block
         status: {}
-      name: ocs-deviceset-gp3
-      placement: {}
+      count: 1
+      replica: 3
       portable: true
       preparePlacement: {}
-      replica: 3
-      resources: {}
+  encryption:
+    kms: {}
+  mirroring: {}
+  managedResources:
+    cephObjectStoreUsers: {}
+    cephCluster: {}
+    cephBlockPools:
+      defaultStorageClass: true
+    cephNonResilientPools:
+      count: 1
+    cephObjectStores: {}
+    cephFilesystems: {}
+    cephRBDMirror:
+      daemonCount: 1
+    cephToolbox: {}
+    cephDashboard: {}
+    cephConfig: {}
+  arbiter: {}
+  network:
+    connections:
+      encryption: {}
+    multiClusterService: {}
+  nodeTopologies: {}
+  externalStorage: {}
+  nfs:
+    enable: true
+  resourceProfile: balanced
