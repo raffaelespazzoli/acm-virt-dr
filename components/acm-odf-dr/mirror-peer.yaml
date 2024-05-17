@@ -1,7 +1,7 @@
 apiVersion: multicluster.odf.openshift.io/v1alpha1
 kind: MirrorPeer
 metadata:
-  name: 'mirrorpeer-prod-a-prod-b'
+  name: 'mirrorpeer-prod-a-prod-p'
   generation: 1
   labels:
     cluster.open-cluster-management.io/backup: resource
@@ -11,7 +11,7 @@ spec:
     storageClusterRef:
       name: ocs-storagecluster
       namespace: openshift-storage
-  - clusterName: 'prod-b'
+  - clusterName: 'prod-b\p'
     storageClusterRef:
       name: ocs-storagecluster
       namespace: openshift-storage

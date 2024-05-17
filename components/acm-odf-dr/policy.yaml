@@ -1,9 +1,9 @@
 apiVersion: ramendr.openshift.io/v1alpha1
 kind: DRPolicy
 metadata:
-  name: 'prod-a-prod-b-10'
+  name: 'prod-a-prod-p-10'
 spec:
   drClusters:
   - 'prod-a'
-  - 'prod-b'
+  - 'prod-p'
   schedulingInterval: '5m'
