@@ -11,7 +11,7 @@ spec:
     storageClusterRef:
       name: ocs-storagecluster
       namespace: openshift-storage
-  - clusterName: 'prod-b\p'
+  - clusterName: 'prod-p'
     storageClusterRef:
       name: ocs-storagecluster
       namespace: openshift-storage
