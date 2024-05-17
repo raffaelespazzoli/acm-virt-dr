@@ -2,7 +2,6 @@ apiVersion: multicluster.odf.openshift.io/v1alpha1
 kind: MirrorPeer
 metadata:
   name: 'mirrorpeer-prod-a-prod-p'
-  generation: 1
   labels:
     cluster.open-cluster-management.io/backup: resource
 spec:
