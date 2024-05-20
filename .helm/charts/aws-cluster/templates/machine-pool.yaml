@@ -16,3 +16,7 @@ spec:
         type: io1
       type: m5.xlarge
   replicas: {{ .Values.storageNodes.replicas }}
+  taints:
+  - effect: NoSchedule
+    key: node.ocs.openshift.io/storage
+    value: "true"    
