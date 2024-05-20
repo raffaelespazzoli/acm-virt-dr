@@ -5,6 +5,7 @@ metadata:
   annotations:
     uninstall.ocs.openshift.io/cleanup-policy: delete
     uninstall.ocs.openshift.io/mode: graceful
+    ocs.openshift.io/clusterIsDisasterRecoveryTarget: "true"
 spec:
   storageDeviceSets:
     - config: {}
