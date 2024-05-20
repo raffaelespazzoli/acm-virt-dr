@@ -16,7 +16,9 @@ helmCharts:
       region: us-east-1
       machineNetworkCIDR: 10.2.0.0/16
       clusterNetworkCIDR: 10.128.0.0/14
-      serviceNetworkCIDR: 172.30.0.0/16      
+      serviceNetworkCIDR: 172.30.0.0/16
+      storageNodes:
+        replicas: 4      
   - name: cluster-registration
     releaseName: prod-a
     namespace: prod-a
