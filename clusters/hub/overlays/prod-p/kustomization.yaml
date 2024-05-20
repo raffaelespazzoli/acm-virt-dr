@@ -47,7 +47,7 @@ helmCharts:
         value: "true" 
       purpose: odf
       clusterRef: prod-p
-      replicas: 3
+      replicas: 4
       aws:
         machineType: m6i.2xlarge
       infrastructure: aws        

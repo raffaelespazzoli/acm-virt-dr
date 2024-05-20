@@ -43,7 +43,7 @@ helmCharts:
         cluster.ocs.openshift.io/openshift-storage: ""
       purpose: odf
       clusterRef: prod-a
-      replicas: 3
+      replicas: 4
       aws:
         machineType: m6i.2xlarge
       infrastructure: aws
