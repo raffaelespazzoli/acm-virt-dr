@@ -15,4 +15,4 @@ spec:
         size: 100
         type: io1
       type: m5.xlarge
-  replicas: {{ .Values.storageNode.replicas }}
+  replicas: {{ .Values.storageNodes.replicas }}
