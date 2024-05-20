@@ -25,6 +25,15 @@ applications:
     destination:
       namespace: openshift-config
     source:
-      path: components/openshift-config      
+      path: components/openshift-config
+
+  openshift-virtualization:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '5'
+    destination:
+      namespace: openshift-cnv
+    source:
+      path: components/openshift-virtualization          
 
       
