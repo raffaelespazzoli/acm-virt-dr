@@ -18,7 +18,7 @@ helmCharts:
       clusterNetworkCIDR: 10.132.0.0/14
       serviceNetworkCIDR: 172.31.0.0/16
       storageNodes:
-        replicas: 4            
+        replicas: 3            
   - name: cluster-registration
     releaseName: prod-p
     namespace: prod-p
@@ -41,7 +41,10 @@ helmCharts:
     valuesInline: 
       labels: 
         cluster.ocs.openshift.io/openshift-storage: ""
-      taints: []
+      taints:
+      - effect: NoSchedule
+        key: node.ocs.openshift.io/storage
+        value: "true" 
       purpose: odf
       clusterRef: prod-p
       replicas: 3

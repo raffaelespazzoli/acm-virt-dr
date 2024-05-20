@@ -18,7 +18,7 @@ helmCharts:
       clusterNetworkCIDR: 10.128.0.0/14
       serviceNetworkCIDR: 172.30.0.0/16
       storageNodes:
-        replicas: 4      
+        replicas: 3      
   - name: cluster-registration
     releaseName: prod-a
     namespace: prod-a
@@ -41,13 +41,16 @@ helmCharts:
     valuesInline: 
       labels: 
         cluster.ocs.openshift.io/openshift-storage: ""
-      taints: []
       purpose: odf
       clusterRef: prod-a
       replicas: 3
       aws:
         machineType: m6i.2xlarge
-      infrastructure: aws                    
+      infrastructure: aws
+      taints:
+      - effect: NoSchedule
+        key: node.ocs.openshift.io/storage
+        value: "true"                     
 
   # - name: vault-cluster-registration
   #   releaseName: prod-a
