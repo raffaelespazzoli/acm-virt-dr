@@ -9,3 +9,4 @@ spec:
   - odf-console
   - gitops-plugin
   - monitoring-plugin
+  - kubevirt-plugin
