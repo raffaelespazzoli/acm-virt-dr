@@ -34,6 +34,15 @@ applications:
     destination:
       namespace: openshift-cnv
     source:
-      path: components/openshift-virtualization          
+      path: components/openshift-virtualization 
+
+  hyperconverged-instance:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '15'
+    destination:
+      namespace: openshift-cnv
+    source:
+      path: components/hyperconverged-instance             
 
       
