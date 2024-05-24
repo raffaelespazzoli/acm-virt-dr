@@ -20,6 +20,7 @@ resources:
   - ./ingress-controller-patch.yaml
   - ./ingress-rbac.yaml
   - ./console-patch.yaml
+  - ./storage-class-patch.yaml
 
 generatorOptions:
  disableNameSuffixHash: true  

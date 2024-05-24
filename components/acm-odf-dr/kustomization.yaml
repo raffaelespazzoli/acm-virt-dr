@@ -6,3 +6,6 @@ resources:
   - ./policy.yaml
   - ./production-managed-cluster-set.yaml
   - ./submariner-broker.yaml
+  - ./gitops-clusters.yaml
+  - ./managed-clusterset-binding.yaml
+  - ./placement.yaml
