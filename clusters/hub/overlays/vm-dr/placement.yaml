@@ -1,0 +1,15 @@
+apiVersion: cluster.open-cluster-management.io/v1beta1
+kind: Placement
+metadata:
+  annotations:
+    cluster.open-cluster-management.io/experimental-scheduling-disable: 'true'
+    drplacementcontrol.ramendr.openshift.io/drpc-name: dr-try-placement-drpc
+    drplacementcontrol.ramendr.openshift.io/drpc-namespace: openshift-gitops
+  name: vm-dr-placement
+spec:
+  clusterSets:
+    - production
+  prioritizerPolicy:
+    mode: Additive
+  spreadPolicy: {}
+

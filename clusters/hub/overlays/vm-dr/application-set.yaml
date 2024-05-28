@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: vm-dr
+spec:
+  generators:
+    - clusterDecisionResource:
+        configMapRef: acm-placement
+        labelSelector:
+          matchLabels:
+            cluster.open-cluster-management.io/placement: vm-dr-placement
+        requeueAfterSeconds: 180
+  template:
+    metadata:
+      name: vm-dr-{{name}}
+      labels:
+        velero.io/exclude-from-backup: "true"
+    spec:
+      destination:
+        namespace: vm-dr
+        server: "{{server}}"
+      project: default
+      sources:
+        - path: components/vm
+          repoURL: https://github.com/raffaelespazzoli/acm-virt-dr
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - PruneLast=true
+

@@ -86,5 +86,14 @@ applications:
         - group: 'redhatcop.redhat.io'
           jsonPointers:
             - /spec/kubernetesHost
-          kind: KubernetesAuthEngineConfig           
+          kind: KubernetesAuthEngineConfig  
+
+# dr apps
+
+  vm-dr:
+    annotations:
+      argocd.argoproj.io/compare-options: IgnoreExtraneous
+      argocd.argoproj.io/sync-wave: '35'
+    source:
+      path: clusters/hub/overlays/vm-dr
                           
