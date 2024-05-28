@@ -1,12 +1,7 @@
 apiVersion: ramendr.openshift.io/v1alpha1
 kind: DRPlacementControl
 metadata:
-  annotations:
-    drplacementcontrol.ramendr.openshift.io/app-namespace: vm-dr
-    drplacementcontrol.ramendr.openshift.io/last-app-deployment-cluster: prod-a
   name: vm-dr-placement-drpc
-  labels:
-    cluster.open-cluster-management.io/backup: ramen
 spec:
   drPolicyRef:
     apiVersion: ramendr.openshift.io/v1alpha1
