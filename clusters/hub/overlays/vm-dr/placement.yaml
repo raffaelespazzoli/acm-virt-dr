@@ -3,7 +3,7 @@ kind: Placement
 metadata:
   annotations:
     cluster.open-cluster-management.io/experimental-scheduling-disable: 'true'
-    drplacementcontrol.ramendr.openshift.io/drpc-name: dr-try-placement-drpc
+    drplacementcontrol.ramendr.openshift.io/drpc-name: vm-dr-placement-drpc
     drplacementcontrol.ramendr.openshift.io/drpc-namespace: openshift-gitops
   name: vm-dr-placement
 spec:
