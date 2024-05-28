@@ -20,5 +20,5 @@ spec:
   preferredCluster: prod-a
   pvcSelector:
     matchLabels:
-      appname: busybox
+      app.kubernetes.io/component: storage
 
